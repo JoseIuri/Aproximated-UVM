@@ -1,0 +1,12 @@
+//
+// File created by:  xrun
+// Do not modify this file
+//
+-DEFPARAM
+top.min_cover=100
+-DEFPARAM
+top.min_transa=5000
+-ACCESS
++r
+-COVERAGE
+all

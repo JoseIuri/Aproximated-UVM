@@ -1,0 +1,8 @@
+//
+// File created by:  xrun
+// Do not modify this file
+
+s1::(08Aug2019:08:14:57):( xrun -64bit -uvm +incdir+../../rtl/ ./mul8s_pkg.sv mul8s_if.sv ../../rtl/mul8s.v ./mul8s_wrapper.sv top.sv +UVM_TESTNAME=simple_test -covtest simple_test-100 -svseed 100 -defparam top.min_cover=100 -defparam top.min_transa=5000 -access +r -input shm.tcl +uvm_set_config_int=*,recording_detail,1 -coverage all -covoverwrite )
+s2::(08Aug2019:08:15:58):( xrun -64bit -uvm +incdir+../../rtl/ ./mul8s_pkg.sv mul8s_if.sv ../../rtl/mul8s.v ./mul8s_wrapper.sv top.sv +UVM_TESTNAME=simple_test -covtest simple_test-100 -svseed 100 -defparam top.min_cover=100 -defparam top.min_transa=5000 -access +r -input shm.tcl +uvm_set_config_int=*,recording_detail,1 -coverage all -covoverwrite )
+s3::(08Aug2019:08:16:30):( xrun -64bit -uvm +incdir+../../rtl/ ./mul8s_pkg.sv mul8s_if.sv ../../rtl/mul8s.v ./mul8s_wrapper.sv top.sv +UVM_TESTNAME=simple_test -covtest simple_test-100 -svseed 100 -defparam top.min_cover=100 -defparam top.min_transa=5000 -access +r -input shm.tcl +uvm_set_config_int=*,recording_detail,1 -coverage all -covoverwrite )
+s4::(08Aug2019:08:18:42):( xrun -64bit -uvm +incdir+../../rtl/ ./mul8s_pkg.sv mul8s_if.sv ../../rtl/mul8s.v ./mul8s_wrapper.sv top.sv +UVM_TESTNAME=simple_test -covtest simple_test-100 -svseed 100 -defparam top.min_cover=100 -defparam top.min_transa=5000 -access +r -input shm.tcl +uvm_set_config_int=*,recording_detail,1 -coverage all -covoverwrite )
