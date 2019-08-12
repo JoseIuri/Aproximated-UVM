@@ -9,15 +9,22 @@ module top;
     initial begin
     clk = 0;
     reset = 1;
-    #22 reset = 1;
     #1  reset = 0;
+    #22 reset = 1;
     end
 
     always #5 clk = !clk;
 
     mul8s_if mul8s_vif (.clk(clk), .rst(reset));
 
-    mul8s_wrapper DUT (.bus(mul8s_vif));
+    //mul8s_wrapper DUT (.bus(mul8s_vif));
+
+    mul8s mul8s_sv (
+        .rst(mul8s_vif.rst),
+        .clk(mul8s_vif.clk),
+        .A(mul8s_vif.A),
+        .B(mul8s_vif.B),
+        .O(mul8s_vif.O));
 
     initial begin
     `ifdef XCELIUM
