@@ -13,6 +13,7 @@ package mul8s_pkg;
 
     `include "./mul8s_cover.sv"
     `include "./mul8s_refmod.sv"
+    `include "./mul8s_analyzer.sv"
     `include "./mul8s_scoreboard.sv"
     `include "./mul8s_env.sv"
 

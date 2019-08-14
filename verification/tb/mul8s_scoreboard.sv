@@ -5,6 +5,7 @@ class mul8s_scoreboard extends uvm_scoreboard;
 
     mul8s_refmod rfm;
     comp_type comp;
+    mul8s_analyzer analy;
 
     uvm_analysis_port #(T) ap_comp;
     uvm_analysis_port #(T) ap_rfm;
@@ -28,6 +29,7 @@ class mul8s_scoreboard extends uvm_scoreboard;
         ap_comp.connect(comp.before_export);
         ap_rfm.connect(rfm.in);
         rfm.out.connect(comp.after_export);
+        analy.from_comparator.connect(comp.pair_ap);
     endfunction
 
 endclass: mul8s_scoreboard
