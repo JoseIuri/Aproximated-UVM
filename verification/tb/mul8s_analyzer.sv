@@ -1,3 +1,10 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_analyzer.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the block that analyzes the outputs from DUT
+                    to extract relevant information about his accuracy.
+*/
 class mul8s_analyzer extends uvm_component;
     `uvm_component_utils(mul8s_analyzer)
     
@@ -21,8 +28,7 @@ class mul8s_analyzer extends uvm_component;
     int error_int;
     int rfm;
 
-    int transa_error_begin;
-    int transa_error_end;
+    logic transa_error;
 
     function new(string name = "mul8s_analyzer", uvm_component parent);
         super.new(name, parent);
@@ -41,7 +47,7 @@ class mul8s_analyzer extends uvm_component;
         error_accumulator = 0;
         relative_accumulator = 0;
         squared_accumulator = 0;
-        transa_error_begin = 0;
+        transa_error = 1;
 
         forever begin
             @begin_analyzer_task;
@@ -67,9 +73,8 @@ class mul8s_analyzer extends uvm_component;
             MSE = squared_accumulator/(count);
 
             if(count >= 1000) begin 
-                if ((EP <= 0.9316 && MAE <= 150 && MRE <= 0.1226 && MSE <= 38236)) begin 
-                    transa_error_begin = (count > transa_error_begin) ? count : transa_error_begin;
-                    transa_error_end = count;
+                if ((EP >= 0.9316 || MAE >= 150 || MRE >= 0.1226 || MSE >= 38236)) begin 
+                    transa_error = 0;
                 end
             end
         end
@@ -83,7 +88,10 @@ class mul8s_analyzer extends uvm_component;
         $display("MRE:     %7.2f", MRE*100);
         $display("MSE:     %7.2f", MSE);
         $display("");
-        $display("Parameters Check Fail at Transaction %d to Transaction %d", transa_error_begin, transa_error_end);
+        if (!transa_error)
+            $display("Parameters Check FAIL");
+        else
+            $display("Parameters Check PASS");
     endfunction
 
     virtual function write (uvm_class_pair #(mul8s_transaction, mul8s_transaction) t);

@@ -1,3 +1,12 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_transaction.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the main transaction of the 
+                    testbench architecture.
+*/
+
+
 class mul8s_transaction extends uvm_sequence_item;
     rand bit signed [7:0] A;
     rand bit signed [7:0] B;

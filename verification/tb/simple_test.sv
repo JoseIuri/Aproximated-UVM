@@ -1,3 +1,10 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : simple_test.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the main test of the 
+                    testbench architecture..
+*/
 class simple_test extends uvm_test;
     mul8s_env env_h;
     mul8s_sequence seq;

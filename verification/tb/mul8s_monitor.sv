@@ -1,3 +1,10 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_monitor.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the block that monitores the signals on
+                    interface..
+*/
 class mul8s_monitor extends uvm_monitor;
 
     virtual mul8s_if  mul8s_vif;

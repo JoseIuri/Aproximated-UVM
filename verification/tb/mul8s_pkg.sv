@@ -1,3 +1,9 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_pkg.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : This file defines the package of another files from testbench.
+*/
 package mul8s_pkg;
     `include "uvm_macros.svh"
     import uvm_pkg::*;

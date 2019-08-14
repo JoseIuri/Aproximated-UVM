@@ -1,3 +1,9 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_transaction.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the main agent of the testbench architecture.
+*/
 class mul8s_agent extends uvm_agent;
     uvm_sequencer#(mul8s_transaction) sqr;
     mul8s_driver    drv;

@@ -1,3 +1,10 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_cover.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the basic coverage 
+                    testbench architecture.
+*/
 `uvm_analysis_imp_decl(_req)
 `uvm_analysis_imp_decl(_resp)
 

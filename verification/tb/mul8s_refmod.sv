@@ -1,3 +1,10 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_refmod.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the reference model of the 
+                    testbench architecture..
+*/
 class mul8s_refmod extends uvm_component;
     `uvm_component_utils(mul8s_refmod)
     

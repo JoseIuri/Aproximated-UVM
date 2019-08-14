@@ -1,3 +1,12 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_driver.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the blocks that drive the signals to the 
+                    DUT.
+*/
+
+
 class mul8s_driver extends uvm_driver#(mul8s_transaction);
     `uvm_component_utils(mul8s_driver)
 

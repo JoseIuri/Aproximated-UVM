@@ -1,3 +1,11 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_env.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the environment of the 
+                    testbench architecture.
+*/
+
 class mul8s_env extends uvm_env;
     typedef mul8s_agent agent_type;
     agent_type agent;

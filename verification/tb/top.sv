@@ -1,3 +1,9 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : top.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the top module.
+*/
 module top;
     import uvm_pkg::*;
     import mul8s_pkg::*;
@@ -17,14 +23,14 @@ module top;
 
     mul8s_if mul8s_vif (.clk(clk), .rst(reset));
 
-    //mul8s_wrapper DUT (.bus(mul8s_vif));
+    mul8s_wrapper DUT (.bus(mul8s_vif));
 
-    mul8s mul8s_sv (
-        .rst(mul8s_vif.rst),
-        .clk(mul8s_vif.clk),
-        .A(mul8s_vif.A),
-        .B(mul8s_vif.B),
-        .O(mul8s_vif.O));
+    // mul8s mul8s_sv (
+    //     .rst(mul8s_vif.rst),
+    //     .clk(mul8s_vif.clk),
+    //     .A(mul8s_vif.A),
+    //     .B(mul8s_vif.B),
+    //     .O(mul8s_vif.O));
 
     initial begin
     `ifdef XCELIUM

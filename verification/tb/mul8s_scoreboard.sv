@@ -1,3 +1,11 @@
+/*
+Project           : Approximated Circuits UVM Testench
+File Name         : mul8s_scoreboard.sv
+Author            : Jose Iuri B. de Brito (XMEN LAB)
+Purpose           : File that defines the scoreboard that encapsulates the model 
+                    the comparator and the analyzer of the testbench architecture.
+*/
+
 class mul8s_scoreboard extends uvm_scoreboard;
     
     typedef mul8s_transaction T;
