@@ -22,6 +22,7 @@ class mul8s_scoreboard extends uvm_scoreboard;
         super.build_phase(phase);
         rfm = mul8s_refmod::type_id::create("rfm", this);
         comp = comp_type::type_id::create("comp", this);
+        analy = mul8s_analyzer::type_id::create("analy", this);
     endfunction
     
     virtual function void connect_phase(uvm_phase phase);
@@ -29,7 +30,7 @@ class mul8s_scoreboard extends uvm_scoreboard;
         ap_comp.connect(comp.before_export);
         ap_rfm.connect(rfm.in);
         rfm.out.connect(comp.after_export);
-        analy.from_comparator.connect(comp.pair_ap);
+        comp.pair_ap.connect(analy.from_comparator);
     endfunction
 
 endclass: mul8s_scoreboard

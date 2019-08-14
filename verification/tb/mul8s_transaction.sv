@@ -18,6 +18,9 @@ class mul8s_transaction extends uvm_sequence_item;
         mul8s_transaction that;
         real WCE;
         real WCRE;
+
+        int error;
+        int dut, rfm;
  
         if ( ! $cast( that, rhs ) ) return 0;
 
@@ -25,10 +28,17 @@ class mul8s_transaction extends uvm_sequence_item;
         // WCE = 759 
         // WCRE% = 1500.00 %
 
-        WCE = $bitstoreal(that.O - this.O) >= 0 ? $bitstoreal(that.O - this.O) : $bitstoreal(this.O - that.O);
-        WCRE = (this.O == 'b0 || that.O == 'b0) ?  WCE/1 : WCE/$bitstoreal(that.O);
+        rfm = this.O;
+        error = that.O - this.O;
+        error = (error > 0) ? error : -1*error;
+
+        WCE = $itor(error);
+        WCRE = WCE/(rfm == 0 ? 759 : rfm);
         WCRE = WCRE < 0 ? (-1)*WCRE : WCRE;
-        return (WCE <= 759 && WCRE <= 150000);
+
+        $display("WCE = %f | WCRE = %f", WCE, WCRE);
+
+        return (WCE <= 759 && WCRE <= 15);
    endfunction: do_compare
 
     function string convert2string();
