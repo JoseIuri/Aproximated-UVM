@@ -1,14 +1,24 @@
 # Aproximated UVM
 
+## Table of Contents
+
+- [Getting Started](#getting-started)
+- [Prerequisites](#prerequisites)
+- [Running the tests](#running-the-tests)
+- [Authors](#authors)
+- [License](#license)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
+
+## Getting Started
+
 This repository contains a proposal UVM testbench for aproximated circuits.
 
 This repository uses DUTs found at EvoApprox8b - Approximate Adders and Multipliers Library (https://ehw.fit.vutbr.cz/evoapproxlib/)
 
-V. Mrazek, R. Hrbacek, Z. Vasicek and L. Sekanina, EvoApprox8b: Library of approximate adders and multipliers for circuit design and benchmarking of approximation methods. Design, Automation & Test in Europe Conference & Exhibition (DATE), 2017, Lausanne, 2017, pp. 258-261.
-
-## Getting Started
-
 This Testbench architecture can track the error metrics defined for correct functionality of the circuit. At the end of simulation the result is shown.
+
+V. Mrazek, R. Hrbacek, Z. Vasicek and L. Sekanina, EvoApprox8b: Library of approximate adders and multipliers for circuit design and benchmarking of approximation methods. Design, Automation & Test in Europe Conference & Exhibition (DATE), 2017, Lausanne, 2017, pp. 258-261.
 
 ![Testbench Architecture](aproximated_tb.png)
 
@@ -59,6 +69,12 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * XMEN Lab - Federal University of Campina Grande - Brazil
+
+<p align="center">
+  <a href="https://www.embedded.ufcg.edu.br/">
+    <img alt="XMEN Lab" title="XMEN Lab" src="https://i.imgur.com/IzbZM0E.png" width="200">
+  </a>
+</p>
 
 
 
